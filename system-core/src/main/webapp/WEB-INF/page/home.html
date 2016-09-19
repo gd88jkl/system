@@ -1,0 +1,36 @@
+<html>
+<head th:include="commons/header::head(${'XX后台管理系统'})"></head>
+<body class="sticky-header">
+<section>
+	<div class="left-side sticky-left-side" th:include="commons/left_side"></div>
+    <div class="main-content" >
+        <div class="header-section">
+	        <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+	        <form class="searchform" action="index.html" method="post" style="margin-bottom: 0em;">
+	            <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+	        </form>
+ 	        <div class="menu-right" th:include="commons/top"></div>
+        </div>
+		<!-- page body start -->
+		<div class="page-body">
+		
+	        <!-- page heading start-->
+	        <div class="page-heading">
+	            Page Tittle goes here
+	        </div>
+	        <!-- page heading end-->
+	
+	        <!--body wrapper start-->
+	        <div class="wrapper">
+	            Body contents goes here
+	            <button class="btn btn-success" type="button" onClick="btnCliek();">Success</button>
+	        </div>
+	        <!--body wrapper end-->
+	        
+	    </div>
+	    <!-- page body end -->
+ 		<footer class="sticky-footer" th:include="commons/footer"></footer>
+    </div>
+</section>
+</body>
+</html>

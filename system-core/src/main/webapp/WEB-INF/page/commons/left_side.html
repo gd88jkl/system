@@ -1,0 +1,25 @@
+<!--logo and iconic logo start-->
+<div class="logo">
+	<a href="index.html"><img src="plugins/adminEx/images/logo.png" alt="" /></a>
+</div>
+<div class="logo-icon text-center">
+	<a href="index.html"><img src="plugins/adminEx/images/logo_icon.png" alt="" /></a>
+</div>
+<!--logo and iconic logo end-->
+<div class="left-side-inner">
+	<!--sidebar nav start-->
+	<ul id="menu" class="nav nav-pills nav-stacked custom-nav">
+		<li class="active"><a href="home"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+		<li th:each="menu : ${menus}" th:class="${not #lists.isEmpty(menu.items)} ? 'menu-list' : 'sub-menu-item'">
+			<a th:href="${not #lists.isEmpty(menu.items)} ? '' : 'javascript:addTabs(\'' + ${menu.url} + '\')'">
+				<i th:class="'fa ' + ${menu.spriteCssClass}"></i><span th:text="${menu.text}">�˵�</span>
+			</a>
+			<ul th:if="${not #lists.isEmpty(menu.items)}" class="sub-menu-list">
+				<li th:each="item : ${menu.items}" class="sub-menu-item">
+					<a th:href="'javascript:addTabs(\'' + ${item.url} + '\')'" th:text="${item.text}">�˵�</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<!--sidebar nav end-->
+</div>
