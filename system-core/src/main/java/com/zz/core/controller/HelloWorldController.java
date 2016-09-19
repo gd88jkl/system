@@ -17,19 +17,19 @@ public class HelloWorldController extends CrudController<User, IBaseBiz<User>> {
 	@Autowired
 	private IUserBiz userBiz;
 	
-	@RequestMapping("index")
-	public String index(ModelMap model) {
-		model.addAttribute("name", "对方是个");
-		User user = new User();
-		user.setName("456");
-		userBiz.save(user);
-		return "home";
-	}
-	
-	@RequestMapping("index2")
-	public String index2() {
-		return "index2";
-	}
+	//@RequestMapping("index")
+	//public String index(ModelMap model) {
+	//	model.addAttribute("name", "对方是个");
+	//	User user = new User();
+	//	user.setName("456");
+	//	userBiz.save(user);
+	//	return "home";
+	//}
+	//
+	//@RequestMapping("index2")
+	//public String index2() {
+	//	return "index2";
+	//}
 	
 	@RequestMapping("index3")
 	public String index3() {

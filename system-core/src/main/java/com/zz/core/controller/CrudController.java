@@ -56,8 +56,7 @@ public abstract class CrudController<T, BaseBiz extends IBaseBiz<T>> {
 		ResultMessage resultMessage = new ResultMessage();
 		Class<?> entityClass = this.getEntityClass();
 		T t = (T) JSONHelper.getObject(content, entityClass);
-		baseBiz.save(t);
-		resultMessage.setData(t);
+		resultMessage.setData(baseBiz.save(t));
 		return resultMessage;
 	}
 	
